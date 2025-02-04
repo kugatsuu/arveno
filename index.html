@@ -13,6 +13,7 @@
             text-align: center;
             padding: 20px;
             position: relative;
+            overflow: hidden;
         }
         .container {
             background: rgba(0, 0, 0, 0.7);
@@ -22,44 +23,21 @@
             position: relative;
             z-index: 2;
         }
-        .photo {
+        .photo img {
+            width: 600px; /* Увеличено в 3 раза */
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #ffcc00;
             position: absolute;
-            width: 150px;
-            border-radius: 10px;
-            opacity: 0.7;
+        }
+        .random-img {
+            position: absolute;
+            opacity: 0.5;
         }
     </style>
 </head>
 <body>
-
-    <!-- Разбросанные фото -->
-    <script>
-        const images = [
-            'photo_2022-08-13_17-55-42.jpg',
-            'photo_2023-08-14_02-34-57.jpg',
-            'photo_2023-10-16_23-05-48.jpg',
-            'photo_2023-10-19_02-01-47.jpg',
-            'photo_2023-10-20_18-55-45.jpg',
-            'photo_2023-10-30_09-06-14.jpg',
-            'photo_2023-12-25_21-15-23.jpg',
-            'photo_2023-12-27_10-16-33.jpg',
-            'photo_2024-05-03_15-52-47.jpg',
-            'photo_2024-05-29_08-13-21.jpg'
-        ];
-
-        for (let i = 0; i < images.length; i++) {
-            let img = document.createElement("img");
-            img.src = images[i];
-            img.classList.add("photo");
-            img.style.top = Math.random() * 90 + "vh";
-            img.style.left = Math.random() * 90 + "vw";
-            img.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
-            document.body.appendChild(img);
-        }
-    </script>
-
     <div class="container">
-        <p><strong>Петрова Анастасия Анатольевна</strong></p>
         <p><strong>Дата рождения:</strong> 15.02.1999</p>
         <p><strong>Профессия:</strong> Филолог</p>
         <p>Изучаю английский и японский языки, историю</p>
@@ -74,8 +52,32 @@
         <p>Вся одежда — редкие и модные вещи, которые я создаю сама!</p>
         <p>Обожаю мангу и аниме</p>
         <p>Схожу с ума по Эрену Йегеру ❤️</p>
-        <p>Завести кошечку 🐱</p>
+        <p><strong>Мечтаю завести кошечку 🐱</strong></p>
     </div>
 
+    <script>
+        const images = [
+            "photo_2022-08-13_17-55-42.jpg",
+            "photo_2023-08-14_02-34-57.jpg",
+            "photo_2023-10-16_23-05-48.jpg",
+            "photo_2023-10-19_02-01-47.jpg",
+            "photo_2023-10-20_18-55-45.jpg",
+            "photo_2023-10-30_09-06-14.jpg",
+            "photo_2023-12-25_21-15-23.jpg",
+            "photo_2023-12-27_10-16-33.jpg",
+            "photo_2024-05-03_15-52-47.jpg",
+            "photo_2024-05-29_08-13-21.jpg"
+        ];
+
+        images.forEach(src => {
+            let img = document.createElement("img");
+            img.src = src;
+            img.className = "random-img";
+            img.style.width = Math.random() * 400 + 200 + "px";
+            img.style.left = Math.random() * window.innerWidth + "px";
+            img.style.top = Math.random() * window.innerHeight + "px";
+            document.body.appendChild(img);
+        });
+    </script>
 </body>
 </html>
