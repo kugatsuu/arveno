@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Петрова Анастасия Анатольевна</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: pink;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+        .photo {
+            position: absolute;
+            width: 150px;
+            border-radius: 10px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Разбросанные фото -->
+    <script>
+        const images = [
+            'photo_2022-08-13_17-55-42.jpg',
+            'photo_2023-08-14_02-34-57.jpg',
+            'photo_2023-10-16_23-05-48.jpg',
+            'photo_2023-10-19_02-01-47.jpg',
+            'photo_2023-10-20_18-55-45.jpg',
+            'photo_2023-10-30_09-06-14.jpg',
+            'photo_2023-12-25_21-15-23.jpg',
+            'photo_2023-12-27_10-16-33.jpg',
+            'photo_2024-05-03_15-52-47.jpg',
+            'photo_2024-05-29_08-13-21.jpg'
+        ];
+
+        for (let i = 0; i < images.length; i++) {
+            let img = document.createElement("img");
+            img.src = images[i];
+            img.classList.add("photo");
+            img.style.top = Math.random() * 90 + "vh";
+            img.style.left = Math.random() * 90 + "vw";
+            img.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+            document.body.appendChild(img);
+        }
+    </script>
+
+    <div class="container">
+        <p><strong>Петрова Анастасия Анатольевна</strong></p>
+        <p><strong>Дата рождения:</strong> 15.02.1999</p>
+        <p><strong>Профессия:</strong> Филолог</p>
+        <p>Изучаю английский и японский языки, историю</p>
+        <p>Занимаюсь вязанием и шитьем</p>
+        <p>Люблю вкусно поесть 🍜</p>
+        <p>Соблюдаю распорядок дня, по утрам кушаю яблочко 🍏</p>
+        <p>Занималась плаванием 10 лет</p>
+        <p>Призер республиканских и городских соревнований 🏅</p>
+        <p>Путешествовала по миру</p>
+        <p>Мечтаю побывать в Венеции, Риме, Токио, Киото</p>
+        <p>Не люблю тратиться на одежду</p>
+        <p>Вся одежда — редкие и модные вещи, которые я создаю сама!</p>
+        <p>Обожаю мангу и аниме</p>
+        <p>Схожу с ума по Эрену Йегеру ❤️</p>
+        <p>Завести кошечку 🐱</p>
+    </div>
+
+</body>
+</html>
